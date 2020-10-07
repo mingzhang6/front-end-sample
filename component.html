@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <my-com>
+
+    </my-com>
+</div>
+</body>
+</html>
+<script>
+    var template = `
+<div>
+    <button @click="print()">Damn</button>
+</div>
+    `;
+    Vue.component(
+        'my-com',
+        {
+            data: function(){
+                return {
+                    count: 0,
+                }
+            },
+            methods: {
+                print(){
+                    console.log('Print');
+                }
+            },
+            template: template
+        }
+    );
+
+    var vm = new Vue(
+        {
+            el: '#app'
+        }
+    );
+</script>
